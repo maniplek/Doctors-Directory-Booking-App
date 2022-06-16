@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 
 type Props = {
@@ -18,7 +19,7 @@ export const Doctor: React.FC<Props> = ({ doctor, removeDoctor }) => {
     <div className="flex items-center justify-between px-10 mx-9 ">
       <div className="container flex justify-center gap-9 rounded p-2 overflow-hidden bg-white shadow-lg m-1">
             <div>
-                <h3>{doctor.profilePicture} </h3>
+                <img src={doctor.profilePicture} alt=""  className="w-20 h-20 rounded-full"/>
             </div>
             <div>
                 <h1 className="text-xl font-semibold">
@@ -31,12 +32,10 @@ export const Doctor: React.FC<Props> = ({ doctor, removeDoctor }) => {
                         <p className="font-thin">Phone:{doctor.phoneNumber}</p>
                     </div>
             </div>
-           <button
-          className="bg-orange-400 text-white rounded m-9"
-          onClick={()=> console.log("added appointment")}
-          >
-          Request apointment
-           </button>
+            <Link to={`requestAppointment/${doctor.id}`} className="bg-orange-400 text-white rounded m-9"> 
+                              Request apointment 
+           </Link>
+          
       </div>
     </div>
   );

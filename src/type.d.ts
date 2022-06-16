@@ -1,7 +1,7 @@
 interface IDoctors{
     profilePicture: string
     name: string
-    id: number
+    id: string
     doctorTitle: string
     bio: string
     phoneNumber: number 

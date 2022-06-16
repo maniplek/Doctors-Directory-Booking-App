@@ -1,5 +1,5 @@
 
-import { shallowEqual, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {  removeDoctors } from "../store/actionCreators";
 import { Doctor } from "./Doctor";
 
@@ -8,7 +8,7 @@ import { Doctor } from "./Doctor";
 const Home = () => {
   const doctors: readonly IDoctors[] = useSelector(
     (state: DoctorState) => state.doctors,
-    shallowEqual //
+    
   );
 
 
