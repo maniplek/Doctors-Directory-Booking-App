@@ -7,19 +7,16 @@ type Props = {
   removeDoctor: (doctor: IDoctors) => void;
 };
 
-export const Doctor: React.FC<Props> = ({ doctor, removeDoctor }) => {
+export const Doctor: React.FC<Props> = ({ doctor }) => {
  
-
-//   const saveApointment = React.useCallback(
-//     (doctor: IDoctors) => dispatch(addDoctor(doctor)),
-//     [dispatch]
-//   );
-
   return (
-    <div className="flex items-center justify-between px-10 mx-9 ">
-      <div className="container flex justify-center gap-9 rounded p-2 overflow-hidden bg-white shadow-lg m-1">
+    <div className="flex px-40 mx-9">
+      <div className="flex justify-center gap-9 rounded p-2 overflow-hidden bg-white shadow-lg m-1">
             <div>
-                <img src={doctor.profilePicture} alt=""  className="w-30 h-20 rounded-full"/>
+              <Link to={`doctorProfile/${doctor.id}`}>
+              <img src={doctor.profilePicture} alt=""  className="w-30 h-20 object-center rounded-2xl"/>
+              </Link>
+                
             </div>
             <div>
                 <h1 className="text-xl font-semibold">
@@ -32,7 +29,7 @@ export const Doctor: React.FC<Props> = ({ doctor, removeDoctor }) => {
                         <p className="font-thin">Phone:{doctor.phoneNumber}</p>
                     </div>
             </div>
-            <Link to={`requestAppointment/${doctor.id}`} className="bg-blue-400 text-white rounded m-9"> 
+            <Link to={`requestAppointment/${doctor.id}`} className="bg-blue-400 text-white rounded-full px-2 m-9"> 
                               Request apointment 
            </Link>
           

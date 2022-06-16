@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Admin from "./components/Admin";
 import React from "react";
 import RequestAppointment from "./components/RequestAppointment";
+import DoctorProfile from "./components/DoctorProfile";
 
 
 const App: React.FC = () => {
@@ -13,6 +14,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/Admin" element={<Admin/>} />
         <Route path="/requestAppointment/:doctorId" element={<RequestAppointment/>} />
+        <Route path="/doctorProfile/:doctorId" element={<DoctorProfile/>} />
       </Routes> 
     </div>
   );
