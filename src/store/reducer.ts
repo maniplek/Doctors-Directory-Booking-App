@@ -7,7 +7,7 @@ const initialState: DoctorState = {
 doctors: [
     {
          profilePicture: "https://img.freepik.com/free-photo/portrait-successful-young-doctor-with-folder-stethoscope_1262-12410.jpg?w=1380&t=st=1655336202~exp=1655336802~hmac=6f736560764297358349751eddccb19c27fdea8da4761fdc9f4e42fb6db01285",
-        name: "Dr Dhon",
+        name: "Dr Djohn",
         id: uuid(),
         doctorTitle: "MD",
         bio: "classic medical textbook on the history of medicine with a focus on the biographies of individuals who have made revolutionary advances in the field.",
