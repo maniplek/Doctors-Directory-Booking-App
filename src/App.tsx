@@ -9,7 +9,7 @@ import DoctorProfile from "./components/DoctorProfile";
 
 const App: React.FC = () => {
   return (
-    <div className="flex flex-col  h-screen px-9 m-9 bg-gray-200">     
+    <div className="flex flex-col h-screen px-9 m-9 bg-gray-200">     
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Admin" element={<Admin/>} />

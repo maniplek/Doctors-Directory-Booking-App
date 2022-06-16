@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import Calendar from 'react-calendar';
-
+// import { Timeit } from 'react-timeit';
 
 const RequestAppointment = () => {
   const doctors: readonly IDoctors[] = useSelector(
@@ -10,19 +10,20 @@ const RequestAppointment = () => {
     
   );
 
-  const [value, onChange] = useState(new Date());
-
   const {doctorId} = useParams()
   const [doctor, setDoctor] = useState<IDoctors>()
+  // const [time, setTime] = useState();
+  const [date, setDate] = useState(new Date());
 
   useEffect(() => {
     const newDoctor =  doctors.find(item => item.id === doctorId)
     
     setDoctor(newDoctor)
-    }, [doctorId, doctors])
-console.log(doctor);
+    }, [])
 
-
+    const onChange = (date: React.SetStateAction<Date>) =>{
+      setDate(date);
+    }
   return (
     <div className='flex justify-around p-5'>
       <div>
@@ -32,18 +33,17 @@ console.log(doctor);
         <p className='font-semibold'>Depertment: {doctor?.depertment}</p>
        <hr/>
       </div>
-      <div className='my-9'>
+      <div className='my-9 '>
        
-        <Calendar className='border  border-red-300 border-spacing-8' onChange={onChange} value={value} />
-        <div className='p-4'>
+        <Calendar className=' border border-blue-300 p-2 border-spacing-8 shadow-lg shadow-blue-200' onChange={onChange} value={date} />
+        <div className='p-4 '>
           <h3 className='font-semibold'>Available time</h3>
+          {/* <Timeit onChange={(value: React.SetStateAction<undefined>) => setTime(value)} /> */}
         </div>
         <div>
           <button className='border border-solid border-blue-900 text-blue-600 rounded-full capitalize md:uppercase bg-blue-100 p-1 my-2 '>BOOK AN APPOINTMENT</button>
         </div>
       </div>
-       
-        
     </div>
   )
 }

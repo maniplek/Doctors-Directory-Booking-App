@@ -17,6 +17,7 @@ const DoctorProfile = () => {
     setDoctor(newDoctor)
     }, [doctorId, doctors])
 
+    console.log('>>>>>>>>>>>', doctorId)
 
   return (
     <div className='flex my-2'>
@@ -29,7 +30,7 @@ const DoctorProfile = () => {
         <p className='font-semibold'>LOCATION: {doctor?.location}</p>
         <p className='font-semibold'>Biography: {doctor?.bio}</p>
         
-        <Link to="/requestAppointment" className=""> 
+        <Link to={`/`} className=""> 
         <button className='border border-solid border-blue-900 text-blue-600 rounded-full capitalize md:uppercase bg-blue-100 p-1 my-2 '>book an appointment</button>
          </Link>
        <hr/>

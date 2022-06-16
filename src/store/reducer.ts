@@ -50,7 +50,6 @@ doctors: [
        location: "KIGALI",
        depertment: "Urology",
    },
-
 ]
 }
 const reducer = (
