@@ -27,4 +27,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### DEPLOYMENT
 
-doctor-directory-booking-app.netlify.app
+[doctor-directory-booking-app.netlify.app](https://doctor-directory-booking-app.netlify.app)
