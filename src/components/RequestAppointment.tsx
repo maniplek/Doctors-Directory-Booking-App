@@ -19,10 +19,14 @@ const RequestAppointment = () => {
     const newDoctor =  doctors.find(item => item.id === doctorId)
     
     setDoctor(newDoctor)
-    }, [])
+    }, [doctorId, doctors])
 
     const onChange = (date: React.SetStateAction<Date>) =>{
       setDate(date);
+    }
+
+    const dateNow = () =>{
+      console.log(date)
     }
   return (
     <div className='flex justify-around p-5'>
@@ -31,11 +35,14 @@ const RequestAppointment = () => {
         <img className='w-50 h-60 rounded-3xl' src={doctor?.profilePicture || ""} alt=''/>
         <h2 className='font-semibold'>Name: {doctor?.name}</h2>
         <p className='font-semibold'>Depertment: {doctor?.depertment}</p>
-       <hr/>
       </div>
       <div className='my-9 '>
        
-        <Calendar className=' border border-blue-300 p-2 border-spacing-8 shadow-lg shadow-blue-200' onChange={onChange} value={date} />
+        <Calendar className=' border border-blue-300 p-2 hover:blue-600  border-spacing-8 shadow-lg shadow-blue-200' 
+        onChange={onChange} value={date} 
+        
+        />
+   <button onClick={dateNow}>date</button>
         <div className='p-4 '>
           <h3 className='font-semibold'>Available time</h3>
           {/* <Timeit onChange={(value: React.SetStateAction<undefined>) => setTime(value)} /> */}
