@@ -2,7 +2,6 @@ import * as actionType from "./actionTypes"
 import { v4 as uuid } from 'uuid'
 
 
-
 const initialState: DoctorState = {
 doctors: [
     {
@@ -50,6 +49,50 @@ doctors: [
        location: "KIGALI",
        depertment: "Urology",
    },
+   {
+    profilePicture: "https://img.freepik.com/free-photo/portrait-friendly-male-doctor-dressed-uniform_171337-105.jpg?t=st=1655339528~exp=1655340128~hmac=286200679b868c09a945d8a479e8bb3172b7378202959c5ed8ae33a3a118a0e7&w=1380",
+   name: "Dr Flank",
+   id: uuid(),
+   doctorTitle: "MD",
+   bio: "classic medical textbook on the history of medicine with a focus on the biographies of individuals who have made revolutionary advances in the field.",
+   phoneNumber: 250788917179 ,
+   fax: 925-274-9000,
+   location: "KIGALI",
+   depertment: "Urology",
+},
+{
+    profilePicture: "https://img.freepik.com/free-photo/portrait-friendly-male-doctor-dressed-uniform_171337-105.jpg?t=st=1655339528~exp=1655340128~hmac=286200679b868c09a945d8a479e8bb3172b7378202959c5ed8ae33a3a118a0e7&w=1380",
+   name: "Dr Flank",
+   id: uuid(),
+   doctorTitle: "MD",
+   bio: "classic medical textbook on the history of medicine with a focus on the biographies of individuals who have made revolutionary advances in the field.",
+   phoneNumber: 250788917179 ,
+   fax: 925-274-9000,
+   location: "KIGALI",
+   depertment: "Urology",
+},
+{
+    profilePicture: "https://img.freepik.com/free-photo/portrait-friendly-male-doctor-dressed-uniform_171337-105.jpg?t=st=1655339528~exp=1655340128~hmac=286200679b868c09a945d8a479e8bb3172b7378202959c5ed8ae33a3a118a0e7&w=1380",
+   name: "Dr Flank",
+   id: uuid(),
+   doctorTitle: "MD",
+   bio: "classic medical textbook on the history of medicine with a focus on the biographies of individuals who have made revolutionary advances in the field.",
+   phoneNumber: 250788917179 ,
+   fax: 925-274-9000,
+   location: "KIGALI",
+   depertment: "Urology",
+},
+{
+    profilePicture: "https://img.freepik.com/free-photo/portrait-friendly-male-doctor-dressed-uniform_171337-105.jpg?t=st=1655339528~exp=1655340128~hmac=286200679b868c09a945d8a479e8bb3172b7378202959c5ed8ae33a3a118a0e7&w=1380",
+   name: "Dr Flank",
+   id: uuid(),
+   doctorTitle: "MD",
+   bio: "classic medical textbook on the history of medicine with a focus on the biographies of individuals who have made revolutionary advances in the field.",
+   phoneNumber: 250788917179 ,
+   fax: 925-274-9000,
+   location: "KIGALI",
+   depertment: "Urology",
+},
 ]
 }
 const reducer = (

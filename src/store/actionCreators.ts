@@ -8,10 +8,10 @@ export const addDoctor =(doctor: IDoctors)=>{
     return simulateHttpRequest(action)
 }
 
-export const addAppointment =(doctor: IDoctors)=>{
-    const action: DoctorAction = {
+export const addAppointment =(appointment: IApoint)=>{
+    const action: AppointmentAction = {
         type: actionTypes.ADD_APPOINTMENT,
-        doctor,
+        appointment,
     }
     return simulateHttpRequest(action)
 }
@@ -24,10 +24,11 @@ export const removeDoctors = (doctor: IDoctors) =>{
     return simulateHttpRequest(action)
 
 }
-export const simulateHttpRequest = (action: DoctorAction)=>{
+export const simulateHttpRequest = (action:any )=>{
     return (dispatch: DispatchType) => {
         setTimeout(()=>{
-            dispatch(action)
+            return dispatch(action);
         },500)
     }
 }
+// |

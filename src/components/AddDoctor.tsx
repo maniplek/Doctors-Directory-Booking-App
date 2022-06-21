@@ -1,4 +1,6 @@
 import * as React from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { addDoctor } from "../store/actionCreators"
 
 type Props = {
   saveDoctor: (doctor: IDoctors | any) => void
@@ -18,13 +20,24 @@ export const AddDoctor: React.FC<Props> = ({ saveDoctor }) => {
     e.preventDefault()
     saveDoctor(doctor)
   }
-  const test = () =>{
-    console.log('test');
-  }
+
+  const articles: readonly IDoctors[] = useSelector(
+    (state: DoctorState) => state.doctors,
+  
+  )
+
+  const dispatch: React.Dispatch<any> = useDispatch()
+
+  const saveDoctors = React.useCallback(
+    (article: IDoctors) => dispatch(addDoctor(article)),
+    [dispatch]
+  )
+
 
   return (
     <form onSubmit={addNewDoctor} className="flex flex-col col-span-2 gap-2">
-     <div>
+      <h2 className="font-semibold capitalize underline px-20 p-2">add doctor details</h2>
+     <div className="flex gap-5">
       <input
       className="border border-blue-300"
         type="text"
@@ -33,11 +46,10 @@ export const AddDoctor: React.FC<Props> = ({ saveDoctor }) => {
         onChange={handleDoctorData}
         required
         />
-        </div>
-        <div>
+
 
       <input
-      className="border border-blue-300"
+      className="border border-blue-300 "
         type="text"
         id="title"
         placeholder="Title"
@@ -45,7 +57,7 @@ export const AddDoctor: React.FC<Props> = ({ saveDoctor }) => {
         required
       />
         </div>
-        <div>
+        <div className="flex gap-5">
 
       <input
       className="border border-blue-300"
@@ -54,8 +66,7 @@ export const AddDoctor: React.FC<Props> = ({ saveDoctor }) => {
         placeholder="Phone number"
         onChange={handleDoctorData}
       />
-        </div>
-        <div>
+
 
       <input
       className="border border-blue-300"
@@ -65,7 +76,7 @@ export const AddDoctor: React.FC<Props> = ({ saveDoctor }) => {
         onChange={handleDoctorData}
       />
         </div>
-        <div>
+        <div className="flex gap-5">
 
       <input
       className="border border-blue-300"
@@ -74,8 +85,7 @@ export const AddDoctor: React.FC<Props> = ({ saveDoctor }) => {
         placeholder="location"
         onChange={handleDoctorData}
       /> 
-        </div>
-        <div>
+
 
         <input
         className="border border-blue-300"
@@ -86,10 +96,12 @@ export const AddDoctor: React.FC<Props> = ({ saveDoctor }) => {
       />
         </div>
         <div>
-      <textarea className="border border-blue-300"  placeholder="Biography"></textarea>
+      <textarea className="border border-blue-300 max-w-2xl"  placeholder="Biography"></textarea>
         </div>
         <div>
-      <button className="border border-solid border-blue-400 text-blue-600 rounded-full capitalize md:uppercase bg-blue-100 my-2 " onClick={test}>
+      <button className="border border-solid border-blue-400 text-blue-600 rounded-full capitalize md:uppercase bg-blue-100 my-2" 
+      disabled={doctor === undefined ? true : false}
+      >
         Add Doctor
       </button>
         </div>

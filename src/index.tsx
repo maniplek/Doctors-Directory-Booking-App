@@ -6,13 +6,14 @@ import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/Navbar";
 import { BrowserRouter } from "react-router-dom";
-import reducer from "./store/reducer";
 import { createStore, applyMiddleware, Store } from "redux";
 import thunk from "redux-thunk";
 import Footer from "./components/Footer";
+import rootReducer from "./store/rootreducer";
 
-const store: Store<DoctorState, DoctorAction> & { dispatch: DispatchType } =
-  createStore(reducer, applyMiddleware(thunk));
+type RootState = ReturnType<typeof rootReducer>;
+const store: Store<RootState, DoctorAction | AppointmentAction  > & { dispatch: DispatchType } =
+  createStore(rootReducer, applyMiddleware(thunk));
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

@@ -1,3 +1,24 @@
+interface IApoint{
+    patientName: string
+    date:Date
+    time: Date
+    status:boolean
+    doctorName: string
+    id: string
+}
+type AppointmentState = {
+    appointment: IApoint[]
+}
+
+type AppointmentAction = {
+    type: string
+    appointment: IApoint
+}
+
+type DispatchType =  (args: AppointmentAction) => AppointmentAction
+
+
+
 interface IDoctors{
     profilePicture: string
     name: string

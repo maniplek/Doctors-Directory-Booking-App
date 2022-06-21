@@ -3,6 +3,8 @@ import { addDoctor } from "../store/actionCreators";
 import { AddDoctor } from "./AddDoctor";
 import Calendar from "react-calendar";
 
+
+
 const Admin = () => {
   const saveDoctor = React.useCallback(
     (doctor: IDoctors) => dispatch(addDoctor(doctor)),
@@ -19,10 +21,6 @@ const Admin = () => {
   );
   const onChange = (date: React.SetStateAction<Date>) => {
     setDate(date);
-  };
-
-  const dateNow = () => {
-    console.log(date);
   };
 
   return (
@@ -57,7 +55,7 @@ const Admin = () => {
               <button className="border border-solid border-blue-900 text-blue-600 rounded-xl capitalize md:uppercase  bg-blue-100">cancel</button>
             </tr>
             <tr>
-              <td>Jhon Doe</td>
+              <td>Jhon Doe{}</td>
               <td>5 may, 2022 -- 2:00PM</td>
               <td>Emly</td>
               <button className="border border-solid border-blue-900 text-blue-600 rounded-xl capitalize md:uppercase bg-blue-100">cancel</button>

@@ -37,15 +37,16 @@ const RequestAppointment = () => {
         <p className='font-semibold'>Depertment: {doctor?.depertment}</p>
       </div>
       <div className='my-9 '>
-       
-        <Calendar className=' border border-blue-300 p-2 hover:blue-600  border-spacing-8 shadow-lg shadow-blue-200' 
-        onChange={onChange} value={date} 
-        
+      <h3 className='font-semibold capitalize text-center underline'>available Date</h3>
+        <Calendar className=' border border-blue-300 p-2 hover:blue-600   border-spacing-8 shadow-lg shadow-blue-200' 
+        onChange={onChange} value={date}   
         />
+        {date.toString()}
    <button onClick={dateNow}>date</button>
         <div className='p-4 '>
           <h3 className='font-semibold'>Available time</h3>
           {/* <Timeit onChange={(value: React.SetStateAction<undefined>) => setTime(value)} /> */}
+          <h2 className=''>12:00</h2>
         </div>
         <div>
           <button className='border border-solid border-blue-900 text-blue-600 rounded-full capitalize md:uppercase bg-blue-100 p-1 my-2 '>BOOK AN APPOINTMENT</button>

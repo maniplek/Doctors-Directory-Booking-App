@@ -17,8 +17,6 @@ const DoctorProfile = () => {
     setDoctor(newDoctor)
     }, [doctorId, doctors])
 
-    console.log('>>>>>>>>>>>', doctorId)
-
   return (
     <div className='flex my-2'>
        <div className='my-5'>
